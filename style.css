@@ -1,0 +1,117 @@
+/* Cascating Stylesheet */
+/* O seletor universal "*" faz com que uma propriedade seja aplicada em todos os elementos. */
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  /* o "--" no cs significa que estamos criando uma variável. Portanto, podemos reutilizá-la em outras partes do código. */
+  --black: hsla(240, 6% 13%);
+  --grey: hsla(240, 9%, 89%);
+
+  /* display é uma forma de vizualização dos elementos */
+  display: grid;
+  /* forma de distribuição dos itens */
+  place-items: center;
+
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  background: url('/images/background.svg');
+  width: 375px;
+  height: 812px;
+}
+
+.content {
+  width: 250;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  /* para utilizar uma variável, temos que usar "var()" e, dentro dos parenteses, colocamos a variável */
+  color: var(--grey);
+}
+
+.avatar {
+  width: 10rem; /* 1rem vale 16px (valores padrão)*/
+  margin: 11.5rem auto 0;
+
+  position: relative;
+  /* para pormos limites, utilizamos o "position relative" */
+}
+
+/* quando separamos por espaço a máquina procura a tag span dentro da classe avatar */
+.avatar span {
+  /* o position absolute permite com que aja a possibilidade de trabalhar em camadas, porém, na página INTEIRA */
+  position: absolute;
+  top: -15px;
+
+  z-index: 1;
+  /* z-index -> trabalha com o eixo z, ou seja, com os níveis de índice */
+}
+
+/* o comando abaixo utiliza o > (maior que), pois buscamos apenas a tag img do primeiro nível */
+.avatar > img {
+  width: 10rem;
+  height: 11.5rem;
+  object-fit: cover;
+  /* a propriedade object-fit faz o conteúdo se ajustar dentro dos limites que colocamos */
+
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  /* clip-path aplica uma formas em objetos. Um site útil para usar no processo -> "https://bennettfeely.com/clippy/"*/
+}
+
+h1 {
+  font-size: 1.5rem;
+
+  margin-top: 1.5rem; /* margem entre a foto e o texto */
+}
+
+a {
+  color: var(--grey);
+  text-decoration: none;
+
+  margin-top: 0.25rem; /* margem entre header 1 e github */
+
+  display: flex; /* display flex é essencial para o model-box */
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  margin-top: 2rem; /* margem entre github e paragrafo */
+}
+
+ul {
+  margin-top: 4rem; /* margem entre paragrafo e redes sociais */
+
+  list-style: none; /* tira as "bolinhas" das listas */
+
+  padding: 0; /* retira o espaçamento de padding */
+
+  display: flex; /* deixa um elemento do lado do outro no eixo x */
+  /* para mudarmos a direção do eixo flex, podemos utilizar o comando "flex-direction" e escolher o ideal. */
+  gap: 0.5rem; /* espaçamento entre os itens */
+
+  justify-content: center; /* graças ao comando flex podemos alinhas o conteúdo dessa forma. Não podemos utilizar o text-align pois o ul perde suas propriedades de texto ao usar o -> display flex */
+}
+
+/* o css é responsável pela decoração de uma página web */
+/* o elemento que entra por último é o que tem mais força 
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+*/
