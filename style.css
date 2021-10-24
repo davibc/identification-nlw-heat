@@ -31,7 +31,6 @@ main {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-
   color: var(--grey);
 }
 
@@ -41,7 +40,6 @@ main {
 
   position: relative;
 }
-
 
 .avatar span {
   position: absolute;
@@ -54,8 +52,10 @@ main {
   width: 10rem;
   height: 11.5rem;
   object-fit: cover;
+  /* a propriedade object-fit faz o conteúdo se ajustar dentro dos limites que colocamos */
 
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  /* clip-path aplica uma formas em objetos. Um site útil para usar no processo -> "https://bennettfeely.com/clippy/"*/
 }
 
 h1 {
@@ -83,13 +83,12 @@ p {
 ul {
   margin-top: 4rem; /* margem entre paragrafo e redes sociais */
 
-  list-style: none;
+  list-style: none; /* tira as "bolinhas" das listas */
 
   padding: 0;
 
   display: flex;
-
-  gap: 0.5rem; /* espaçamento entre os itens */
+  gap: 0.5rem;
 
   justify-content: center;
 }
