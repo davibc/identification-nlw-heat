@@ -1,18 +1,18 @@
 * {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
   height: 100%;
+  --black: hsla(240, 6% 13%);
+  --grey: hsla(240, 9%, 89%);
 }
 
 body {
-  --black: hsla(240, 6% 13%);
-  --grey: hsla(240, 9%, 89%);
-
   display: grid;
-
   place-items: center;
 
   font-family: 'Roboto', sans-serif;
@@ -20,9 +20,10 @@ body {
 }
 
 main {
-  background: url(images/background.svg);
-  width: 375px;
-  height: 812px;
+  background: url('/images/background.svg') no-repeat center/cover;
+  width: 100vw;
+  min-height: 812px;
+  height: 100vh;
 }
 
 .content {
