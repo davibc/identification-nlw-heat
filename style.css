@@ -7,11 +7,13 @@
 html,
 body {
   height: 100%;
+  width: 100%;
   --black: hsla(240, 6% 13%);
   --grey: hsla(240, 9%, 89%);
 }
 
 body {
+  background: url('images/background-desktop.svg') no-repeat center/cover;
   display: grid;
   place-items: center;
 
@@ -35,7 +37,7 @@ main {
 }
 
 .avatar {
-  width: 10rem; /* 1rem vale 16px (valores padrão)*/
+  width: 10rem; /* 1rem -> 16px (valores padrão)*/
   margin: 11.5rem auto 0;
 
   position: relative;
@@ -52,23 +54,22 @@ main {
   width: 10rem;
   height: 11.5rem;
   object-fit: cover;
-  /* a propriedade object-fit faz o conteúdo se ajustar dentro dos limites que colocamos */
 
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-  /* clip-path aplica uma formas em objetos. Um site útil para usar no processo -> "https://bennettfeely.com/clippy/"*/
+  /* clip-path help -> "https://bennettfeely.com/clippy/"*/
 }
 
 h1 {
   font-size: 1.5rem;
 
-  margin-top: 1.5rem; /* margem entre a foto e o texto */
+  margin-top: 1.5rem;
 }
 
 a {
   color: var(--grey);
   text-decoration: none;
 
-  margin-top: 0.25rem; /* margem entre header 1 e github */
+  margin-top: 0.25rem;
 
   display: flex;
   gap: 0.75rem;
@@ -77,13 +78,13 @@ a {
 }
 
 p {
-  margin-top: 2rem; /* margem entre github e paragrafo */
+  margin-top: 2rem;
 }
 
 ul {
-  margin-top: 4rem; /* margem entre paragrafo e redes sociais */
+  margin-top: 4rem;
 
-  list-style: none; /* tira as "bolinhas" das listas */
+  list-style: none;
 
   padding: 0;
 
@@ -91,4 +92,34 @@ ul {
   gap: 0.5rem;
 
   justify-content: center;
+}
+
+@media screen and (min-width: 800px) {
+  main {
+    background: url('images/background-card-desktop.svg') cover;
+    width: 22.375rem;
+    height: 33.75rem;
+    min-height: 540px;
+
+    box-shadow: 5px 5px 30px;
+    border-radius: 20px;
+
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    transform: translateZ(20px);
+  }
+
+  .content {
+    position: relative;
+    top: -9.7rem;
+    align-items: center;
+  }
+
+  .avatar img {
+    margin: 1.6rem auto 0;
+  }
+
+  #username {
+    top: -1.5rem;
+  }
 }
