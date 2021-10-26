@@ -1,5 +1,5 @@
 # Identification NLW Heat :rocket:
-A web-page created along NLW Heat.
+A webpage created along NLW Heat.
 
 ## Technologies 💻
 + HTML
