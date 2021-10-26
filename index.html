@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html>
   <head lang="pt-br">
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Davi - DoWhile 2021</title>
     <link
@@ -18,7 +20,7 @@
     />
   </head>
   <body>
-    <main>
+    <main class="card" data-tilt>
       <div class="content">
         <div class="avatar">
           <span>
@@ -43,7 +45,6 @@
 
         <p id="userBio">That's my bio!</p>
 
-        <!-- lista não ordenada "ul" com imagens -->
         <ul id="socialLinks">
           <li class="youtube">
             <a href="https://www.youtube.com/davibc" target="_blank">
@@ -62,7 +63,7 @@
           </li>
           <li class="twitter">
             <a href="https://www.twitter.com/costabdavi" target="_blank">
-              <img src="images/Twitter.svg" alt="Perfifl no Twitter" />
+              <img src="images/Twitter.svg" alt="Perfil no Twitter" />
             </a>
           </li>
         </ul>
@@ -70,7 +71,17 @@
     </main>
 
     <script src="app.js"></script>
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script type="text/javascript">
+      VanillaTilt.init(document.querySelector('.your-element'), {
+        max: 25,
+        speed: 400
+      })
+
+      //It also supports NodeList
+      VanillaTilt.init(document.querySelectorAll('.your-element'))
+    </script>
   </body>
 </html>
 
-<!-- For mockup: "http://lorempixel.com/", "http://lorempixel.com.br/" -->
+<!-- Mockup: "http://lorempixel.com/", "http://lorempixel.com.br/" -->
